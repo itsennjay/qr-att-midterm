@@ -236,7 +236,14 @@ export default function TeacherScreen() {
 
       {payload && (
         <View style={styles.qrCard}>
-          <QRCode value={payload} size={200} />
+          <View style={styles.qrWrapper}>
+            <QRCode
+              value={payload}
+              size={200}
+              backgroundColor="#FFFFFF"
+              color="#000000"
+            />
+          </View>
           <Text style={styles.payloadText}>{payload}</Text>
         </View>
       )}
@@ -320,6 +327,11 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
     gap: 12,
+  },
+  qrWrapper: {
+    backgroundColor: '#FFFFFF',
+    padding: 16,
+    borderRadius: 8,
   },
   payloadText: {
     fontSize: 11,
